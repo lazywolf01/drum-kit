@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactive Drum Kit</h1>
+    <div class="drum-container">
+        <button class="drum" data-sound="sounds/crash.mp3">Crash</button>
+        <button class="drum" data-sound="sounds/kick-bass.mp3">Kick</button>
+        <button class="drum" data-sound="sounds/snare.mp3">Snare</button>
+        <button class="drum" data-sound="sounds/tom-1.wav">Tom 1</button>
+        <button class="drum" data-sound="sounds/tom-2.wav">Tom 2</button>
+        <button class="drum" data-sound="sounds/tom-3.wav">Tom 3</button>
+        <button class="drum" data-sound="sounds/tom-4.wav">Tom 4</button>
+    </div>
+
+    <button id="autoButton">Auto</button>
+    <button id="musicToggle">Play Music</button>
+
+    <audio id="backgroundMusic" loop>
+        <source src="sounds/background.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

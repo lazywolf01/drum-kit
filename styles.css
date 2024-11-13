@@ -1,0 +1,201 @@
+/* Basic styling for body and heading */
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main heading */
+h1 {
+    color: #2c3e50;
+    font-size: 48px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+/* Styling for the drum kit container */
+.drum-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+/* Drum button styling */
+.drum {
+    position: relative;
+    padding: 20px;
+    margin: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(145deg, #ff6f61, #ff9c88);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for drum buttons */
+.drum:hover {
+    background: linear-gradient(145deg, #ff9c88, #ff6f61);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Active effect when button is pressed */
+.drum:active {
+    transform: scale(0.9);
+    background-color: #ff6347;
+}
+
+/* Bouncing effect for drum buttons */
+@keyframes buttonBounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.drum:active {
+    animation: buttonBounce 0.2s ease-in-out;
+}
+
+/* Wave animation for button click */
+.wave {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: waveAnimation 0.6s ease-out;
+}
+
+/* Animation for expanding wave */
+@keyframes waveAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Particle effect for drum clicks */
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: particleEffect 0.6s forwards;
+}
+
+/* Animation for particles */
+@keyframes particleEffect {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2) translate(random(-30px, 30px), random(-30px, 30px));
+        opacity: 0;
+    }
+}
+
+/* Auto button styling */
+#autoButton {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover and active effects for Auto button */
+#autoButton:hover {
+    background-color: #4682b4;
+}
+
+#autoButton:active {
+    transform: scale(0.95);
+    background-color: #5f9ea0;
+}
+
+/* Flashing light effect for auto play */
+#autoButton.flash {
+    animation: flashEffect 0.5s infinite;
+}
+
+@keyframes flashEffect {
+    0% {
+        background-color: #ff4757;
+    }
+    50% {
+        background-color: #ff6347;
+    }
+    100% {
+        background-color: #ff4757;
+    }
+}
+
+/* Music Toggle Button styling */
+#musicToggle {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Music Toggle button */
+#musicToggle:hover {
+    background-color: #5f9ea0;
+}
+
+/* Active effect for Music button */
+#musicToggle:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the music player (hidden but playing) */
+#backgroundMusic {
+    display: none;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .drum-container {
+        flex-direction: column;
+    }
+
+    .drum {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    #autoButton, #musicToggle {
+        width: 200px;
+    }
+}
